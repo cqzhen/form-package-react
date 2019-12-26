@@ -28,7 +28,7 @@ class Input extends React.Component {
 		});
 	}
 
-	createUrl = async (files) => {
+	async createUrl(files) {
 		files = [...files];
 		if (files.length === 0) return;
 		let result = await Promise.all(

@@ -1,6 +1,6 @@
 {
   "name": "form-package-react",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "form package for react",
   "main": "lib/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "keywords": [
     "form",
-    "for",
+		"package",
     "react"
   ],
   "author": "cqzhen",

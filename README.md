@@ -54,5 +54,8 @@ export default data;
 每一个属性的 label 值 (Label value for each attribute。)
 ##### options
 radio 类型和 select 类型的专有对象数组属性，包含 label 和 value 两个属性。(Radio type and select type proprietary object array attributes, including label and value attributes。)
+##### Todo
+    - Validation
+    - Custom style
 ##### 效果图
-<img style="display:inline-block;width:388px;" src="./examples/src/form.jpg" />
+<img style="display:inline-block;width:388px;" src="https://s2.ax1x.com/2019/12/26/lkXWaq.png" />
