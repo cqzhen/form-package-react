@@ -48,6 +48,11 @@ class Form extends React.Component {
 	handleSubmit(event) {
 		event.preventDefault();
 		console.log('数据:', this.state);
+		if (typeof this.props.submit === "function") {
+			this.props.submit(this.state);
+		} else {
+			console.warn('warn', 'are you sure don't bind the function for the submit?')
+		}
 		return [];
 	}
 
