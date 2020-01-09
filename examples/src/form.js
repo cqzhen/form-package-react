@@ -1,23 +1,25 @@
 import React from 'react';
-import Form from 'form-package-react';
 import data from './fields';
+import Form from './../../src/index';
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.submit = this.submit.bind(this);
-	}
+  constructor(props) {
+    super(props);
+    this.submit = this.submit.bind(this)
+  }
 
-	render() {
-		return (
-			<div>
-				<Form data={data || []} submit={this.submit} />
-			</div>
-		)
-	}
+  render() {
+    return (
+			<div className="App" style={sectionCss}>
+    	  <header className="App-header">
+					<Form data={data || []} submit={this.submit.bind(this)}></Form>
+    	  </header>
+    	</div>
+    )
+  }
 
-	submit(data, e) {
-		// the data for submit form data
+	submit(data) {
+		console.log('text:', '我是例子。');
 		console.log('data:', data);
 	}
 

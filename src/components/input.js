@@ -11,6 +11,9 @@ class Input extends React.Component {
 			<div>
 				<label className="label">{this.props.data.label}:</label>
 				<input value={this.state.text} onChange={this.handleChange} />
+				{this.props.data.require === true &&
+					<span>*</span>
+				}
 			</div>
 		)
 	}

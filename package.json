@@ -1,12 +1,14 @@
 {
   "name": "form-package-react",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "form package for react",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --progress",
-    "watch": "webpack --watch --progress"
+    // "build": "webpack --progress",
+    "watch": "webpack --watch --progress",
+		"dev": "webpack-dev-server --watch --config webpack.dev.js",
+    "build": "webpack --progress --config webpack.prod.js"
   },
   "keywords": [
     "form",
