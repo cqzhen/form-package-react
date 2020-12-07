@@ -17,6 +17,12 @@ class Radio extends React.Component {
 						})
 					}
 				</select>
+				{this.props.data.require === true && !this.props.data.remindText &&
+					<span style={{color: "red", marginLeft: "10px"}}>*</span>
+				}
+				{this.props.data.remindText &&
+					<span style={{color: "red", marginLeft: "10px", position: "absolute" }}>{this.props.data.remindText}</span>
+				}
 			</div>
 		)
 	}

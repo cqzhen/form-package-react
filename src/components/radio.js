@@ -15,6 +15,12 @@ class Radio extends React.Component {
 						return <div className="radio" key={index}><label>{item.label}</label><input type="radio" name={this.props.data.id} onChange={this.handleChange} value={item.value} /></div>
 					})
 				}
+				{this.props.data.require === true && !this.props.data.remindText &&
+					<span style={{color: "red", marginLeft: "10px"}}>*</span>
+				}
+				{this.props.data.remindText &&
+					<span style={{color: "red", marginLeft: "10px", position: "absolute" }}>{this.props.data.remindText}</span>
+				}
 			</div>
 		)
 	}

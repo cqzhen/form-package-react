@@ -1,6 +1,7 @@
 import React from 'react';
 import { Input, Radio, Select, Textarea, InputFile } from './components/index';
 import './index.css';
+import Element from './element.js';
 class Form extends React.Component {
 	constructor(props) {
 		super(props);
@@ -39,22 +40,58 @@ class Form extends React.Component {
 		)
 	}
 
-	handleChange(data, e) {
-		this.setState({
-			[data.id]: data.value
-		})
-	}
+  handleChange(data, e) {
+    let fields = this.state.fields;
+    let index = fields.findIndex(item => item.id === data.id);
+    fields[index].value = data.value;
+    fields[index] = (new Element(fields[index])).getElement();
+    this.setState({
+      fields
+    })
+    this.setState({
+      [data.id]: data.value
+    })
+  }
 
-	handleSubmit(event) {
-		event.preventDefault();
-		console.log('data:', this.state);
-		if (typeof this.props.submit === "function") {
-			this.props.submit(this.state);
-		} else {
-			console.warn('warn', "are you sure don't bind the function for the submit?")
-		}
-		return [];
-	}
+  getErrorObjs() {
+    let fields = this.state.fields;
+    let errs = [];
+    fields.forEach((item, index) => {
+      let element = new Element(item);
+      item = element.getElement();
+      if (item.remindText) errs.push(item);
+    });
+    this.setState({
+      fields
+    })
+    console.log('errs:', errs);
+    return errs;
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let errorObjs = [];
+    let fields = this.state.fields;
+
+    errorObjs = this.getErrorObjs();
+
+    if (errorObjs.length) {
+      this.setState({
+        fields
+      });
+      return;
+    }
+
+    console.log('data:', this.state);
+
+    if (typeof this.props.submit === "function") {
+      this.props.submit(this.state);
+    } else {
+      console.warn('warn', "are you sure don't bind the function for the submit?")
+    }
+
+    return [];
+  }
 
 }
 
