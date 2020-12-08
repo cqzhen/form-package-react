@@ -5,14 +5,12 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    // "build": "webpack --progress",
-    "watch": "webpack --watch --progress",
-		"dev": "webpack-dev-server --watch --config webpack.dev.js",
-    "build": "webpack --progress --config webpack.prod.js"
+    "build": "webpack --progress",
+    "watch": "webpack --watch --progress"
   },
   "keywords": [
     "form",
-		"package",
+    "package",
     "react"
   ],
   "author": "cqzhen",

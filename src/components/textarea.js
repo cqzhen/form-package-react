@@ -10,7 +10,7 @@ class Input extends React.Component {
 		return (
 			<div>
 				<label className="label">{this.props.data.label}:</label>
-				<textarea value={this.state.text} onChange={this.handleChange} maxlength={this.props.data.maxLength} />
+				<textarea value={this.state.text} onChange={this.handleChange} maxLength={this.props.data.maxLength} />
 				{this.props.data.require === true && !this.props.data.remindText &&
 					<span style={{color: "red", marginLeft: "10px", position: "absolute" }}>*</span>
 				}
