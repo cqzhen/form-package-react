@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Radio, Select, Textarea, InputFile } from './components/index';
+import { Input, Radio, Select, Textarea, InputFile, InputDate } from './components/index';
 import './index.css';
 import Element from './element.js';
 class Form extends React.Component {
@@ -30,6 +30,9 @@ class Form extends React.Component {
 							}
 							if(item.type === 'inputFile') {
 								return <InputFile key={item.id} handleChange={this.handleChange} data={item} />
+							}
+							if(item.type === 'date') {
+								return <InputDate key={item.id} handleChange={this.handleChange} data={item} />
 							}
 							return null;
 						})

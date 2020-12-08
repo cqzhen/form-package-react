@@ -30,10 +30,11 @@ class App extends React.Component {
 
 export default App;
 ```
+[![rSJbsf.png](https://s3.ax1x.com/2020/12/08/rSJbsf.png)](https://imgchr.com/i/rSJbsf)
 
 ### Data for form type
 
-Type: input, inputFile, radio, select, textarea
+Type: input, inputFile, radio, select, textarea, date
 
 ### Data for form the source config
 ```data
@@ -58,6 +59,7 @@ const data = [
     regexText: '请填写正确的电话号码',
     maxLength: 12,
   },
+  {id: 'quitDate', label: '出生日期', type: 'date', require: true, remindText: '', nullText: '内容不为空' },
   {id: 'company', label: '公司', type: 'input', require: false, remindText: '', nullText: '', maxLength: 10 },
   {id: 'sex', label: '性别', type: 'radio', options: [{label: '男', value: 1}, {label: '女', value: 2}], require: true, remindText: '', nullText: '内容不为空', },
   {id: 'img1', label: '个人相片', type: 'inputFile', require: true, remindText: '', nullText: '内容不为空', },
@@ -73,6 +75,8 @@ export default data;
 表单里面每一个属性的唯一绑定 key 值, 也是表单所要提交的 key (The unique binding key value of each attribute in the form is also the key to be submitted by the form。)
 ##### label
 每一个属性的 label 值 (Label value for each attribute。)
+##### type
+每一个元素的类型：input, inputFile, radio, select, textarea（The type of each element: input, inputFile, radio, select, textarea, date） 
 ##### options
 radio 类型和 select 类型的专有对象数组属性，包含 label 和 value 两个属性。(Radio type and select type proprietary object array attributes, including label and value attributes。)
 ##### require
@@ -92,8 +96,9 @@ input 或 textarea 类型的字段，设置可输入字段的最大长度（Inpu
 ##### Todo
     - Custom style
 ##### 效果图
-[![Dxlres.png](https://s3.ax1x.com/2020/12/07/Dxlres.png)](https://imgchr.com/i/Dxlres)
+[![rSJPVe.png](https://s3.ax1x.com/2020/12/08/rSJPVe.png)](https://imgchr.com/i/rSJPVe)
 <!--
+[![Dxlres.png](https://s3.ax1x.com/2020/12/07/Dxlres.png)](https://imgchr.com/i/Dxlres)
 [![DxpZ5t.png](https://s3.ax1x.com/2020/12/07/DxpZ5t.png)](https://imgchr.com/i/DxpZ5t)
 <img style="display:inline-block;width:388px;" src="https://s2.ax1x.com/2019/12/26/lkXWaq.png" />
 -->
