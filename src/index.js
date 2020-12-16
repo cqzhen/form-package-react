@@ -5,14 +5,17 @@ import Element from './element.js';
 class Form extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { fields: props.data || [] };
+		this.state = {
+      fields: props.data || [],
+      type: 'web'
+    };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	render() {
 		return (
-			<div className="reactForm">
+			<div className={`${this.state.type} reactForm`}>
 				<form onSubmit={this.handleSubmit}>
 					{
 						this.state.fields.map(item => {
@@ -37,11 +40,36 @@ class Form extends React.Component {
 							return null;
 						})
 					}
-					<div><label className="label"></label><button type="submit">提交</button></div>
+					<div className="submit"><label className="label"></label><button type="submit">提交</button></div>
 				</form>
 			</div>
 		)
 	}
+
+  componentDidMount() {
+    if (this.isMobile()) {
+      this.setState({
+        type: 'phone' 
+      })
+    }
+  }
+  
+  isMobile() {
+    let ua = navigator.userAgent;
+    console.log('ua:', ua);
+    let ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+
+        isIphone =!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+
+        isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+
+        isMobile = isIphone || isAndroid;
+
+    if (isMobile) {
+      return true;
+    }
+    return false;
+  }
 
   handleChange(data, e) {
     let fields = this.state.fields;
@@ -67,7 +95,6 @@ class Form extends React.Component {
     this.setState({
       fields
     })
-    console.log('errs:', errs);
     return errs;
   }
 

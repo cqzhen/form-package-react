@@ -13,10 +13,10 @@ class Input extends React.Component {
 				<label className="label">{this.props.data.label}:</label>
 				<button onClick={() => { this.fileInput.current.click() }} type="button">上传</button>
 				{this.props.data.require === true && !this.props.data.remindText &&
-					<span style={{color: "red", marginLeft: "10px"}}>*</span>
+					<span style={{color: "red", marginLeft: "10px"}} className="require_star">*</span>
 				}
 				{this.props.data.remindText &&
-					<span style={{color: "red", marginLeft: "10px", position: "absolute" }}>{this.props.data.remindText}</span>
+					<span style={{color: "red", marginLeft: "10px", position: "absolute" }} className="require_text">{this.props.data.remindText}</span>
 				}
 				<input type="file" style={{display: "none"}} ref={this.fileInput} onChange={this.handleChange} />
 				{this.state.imgUrl && 

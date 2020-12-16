@@ -5,21 +5,56 @@
   justify-content: center;
 	min-height: 100vh;
 }
+
+.reactForm.phone form {
+  width: 90%;
+}
+
 form > div {
 	padding-bottom: 10px;
 }
-.label {
+
+.reactForm.phone form > div {
+  padding: 0 5px 5px;
+}
+
+.reactForm.phone form > div:not(.submit) {
+  border: solid 1px #ece9e9;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.reactForm.web .label {
 	display: inline-block;
 	width: 100px;
 	text-align: right;
 	padding-right: 10px;
 	vertical-align: top;
+  font-size: 13px;
+}
+
+.reactForm.phone .label {
+	display: block;
+	padding-right: 10px;
+	padding-bottom: 6px;
+	vertical-align: top;
+  font-size: 13px;
 }
 
 .radio {
 	display: inline-block;
 	padding-right: 20px;
 }
+
+/*
+.reactForm.web form input,.reactForm.web form select,.reactForm.web form textarea,.reactForm.web form button{
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #c7c6c6;
+  padding: 0 10px;
+  resize: none;
+}
+*/
 
 form input,form select,form textarea,form button{
 	/*border-color: #20a0ff!important;*/
@@ -30,15 +65,21 @@ form input,form select,form textarea,form button{
   resize: none;
 }
 
-form input:not([type=radio]) {
-	width: 150px;
+.reactForm.web form input:not([type=radio]) {
+  width: 150px;
 }
 
-form input:not([type=radio]), form button, form select {
-	height: 25px;
+/*
+.reactForm.web form input:not([type=radio]),.reactForm.web form button, form select {
+  height: 25px;
+}
+*/
+
+.reactForm.web form input:not([type=radio]),.reactForm.web form button, form select {
+  height: 25px;
 }
 
-form textarea {
+.reactForm.web form textarea {
 	width: 150px;
   height: 60px;
 }
@@ -48,4 +89,34 @@ form img {
 	height: 200px;
 	display: block;
   margin: 10px 0 0 105px;
+}
+
+.reactForm.phone form img {
+	width: 100px;
+	height: 100px;
+  margin: 10px 0 0 0;
+}
+
+.reactForm.phone form input:not([type=radio]),.reactForm.phone form button, form select {
+  height: 25px;
+}
+
+.reactForm button {
+  background: #20a0ff;
+  color: white;
+}
+
+form span {
+  font-size: 13px;
+}
+
+.reactForm form span.require_star {
+  position: absolute;
+}
+
+.reactForm.phone form span.require_text {
+  display:block;
+  margin-left: 0!important;
+  margin-top: 5px;
+  position: relative!important;
 }

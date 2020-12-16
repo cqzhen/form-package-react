@@ -1,5 +1,9 @@
 ## Form-package-react
 
+form-package-react 是一款基于 React 根据 Json 数据配置 form 表单的工具库，用户只需要关心 Json 数据配置，摆脱手写 form。form-package-react 还可以在浏览器和手机之间无缝衔接，无需手机和浏览器各写一套。（写一套，即可得两套：写一套，送一套）
+
+form-package-react is a tool library based on React to configure form forms based on Json data. Users only need to care about Json data configuration and get rid of handwritten forms. form-package-react can also seamlessly connect between the browser and the mobile phone, without the need for a browser to write a set and a mobile phone to write a set. (Write one set and get two sets: write one set, send one set)
+
 ### Example
 
 ```formPackageReact
@@ -71,6 +75,14 @@ const data = [
 export default data;
 ```
 
+### Version changes 
+
+| Version | Changes |
+|   :-:   |  :-  |
+| 0.0.7 - 0.0.74 |1.表单校验（Validation）<br>2.适配手机样式（Adapt to mobile phone）| 
+      
+      
+
 ##### id
 表单里面每一个属性的唯一绑定 key 值, 也是表单所要提交的 key (The unique binding key value of each attribute in the form is also the key to be submitted by the form。)
 ##### label
@@ -93,11 +105,19 @@ boolean 字段是否需要校验 （Whether the field needs to be verified）
 input 或 textarea 类型的字段，设置可输入字段的最大长度（Input or textarea type field, set the maximum length of the input field）
 ##### Done
     - Validation
+    - Adapt to mobile phone 
 ##### Todo
     - Custom style
-##### 效果图
-[![rSJPVe.png](https://s3.ax1x.com/2020/12/08/rSJPVe.png)](https://imgchr.com/i/rSJPVe)
+    - Loading when submitting
+##### Web 效果图
+<img style="display:inline-block;width:388px;" src="https://s3.ax1x.com/2020/12/16/r1VPAA.png" />
+
+##### Mobile 效果图
+<img style="display:inline-block;width:388px;" src="https://s3.ax1x.com/2020/12/16/r1VUHJ.png" />
+
 <!--
+[![rSJPVe.png](https://s3.ax1x.com/2020/12/08/rSJPVe.png)](https://imgchr.com/i/rSJPVe)
+[![rlOFMV.png](https://s3.ax1x.com/2020/12/16/rlOFMV.png)](https://imgchr.com/i/rlOFMV)
 [![Dxlres.png](https://s3.ax1x.com/2020/12/07/Dxlres.png)](https://imgchr.com/i/Dxlres)
 [![DxpZ5t.png](https://s3.ax1x.com/2020/12/07/DxpZ5t.png)](https://imgchr.com/i/DxpZ5t)
 <img style="display:inline-block;width:388px;" src="https://s2.ax1x.com/2019/12/26/lkXWaq.png" />

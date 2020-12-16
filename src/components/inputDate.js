@@ -12,10 +12,10 @@ class InputDate extends React.Component {
 				<label className="label">{this.props.data.label}:</label>
 				<input value={this.state.text} onChange={this.handleChange} type="date" />
 				{this.props.data.require === true && !this.props.data.remindText &&
-					<span style={{color: "red", marginLeft: "10px"}}>*</span>
+					<span style={{color: "red", marginLeft: "10px"}} className="require_star">*</span>
 				}
 				{this.props.data.remindText &&
-					<span style={{color: "red", marginLeft: "10px", position: "absolute" }}>{this.props.data.remindText}</span>
+					<span style={{color: "red", marginLeft: "10px", position: "absolute" }} className="require_text">{this.props.data.remindText}</span>
 				}
 			</div>
 		)
