@@ -85,15 +85,16 @@ form input,form select,form textarea,form button{
 }
  
 form img {
-	width: 200px;
-	height: 200px;
 	display: block;
   margin: 10px 0 0 105px;
 }
 
+.reactForm.web form img {
+	width: 200px;
+}
+
 .reactForm.phone form img {
 	width: 100px;
-	height: 100px;
   margin: 10px 0 0 0;
 }
 
@@ -119,4 +120,8 @@ form span {
   margin-left: 0!important;
   margin-top: 5px;
   position: relative!important;
+}
+
+.reactForm.phone .submit {
+  text-align: center;
 }
