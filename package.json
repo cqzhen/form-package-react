@@ -1,12 +1,16 @@
 {
   "name": "form-package-react",
-  "version": "0.0.75",
+  "version": "0.0.76",
   "description": "form package for react",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress",
     "watch": "webpack --watch --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cqzhen/form-package-react.git"
   },
   "keywords": [
     "form",
@@ -15,6 +19,10 @@
   ],
   "author": "cqzhen",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cqzhen/form-package-react/issues"
+  },
+  "homepage": "https://github.com/cqzhen/form-package-react#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
