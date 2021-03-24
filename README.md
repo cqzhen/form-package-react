@@ -51,6 +51,7 @@ const data = [
     remindText: '',
     nullText: '内容不为空',
     maxLength: 10,
+    value: 'test', // 为了支持编辑或默认值 support setting default values and re-editing of submitted forms
   },
   {
     id: 'phone',
@@ -103,9 +104,12 @@ boolean 字段是否需要校验 （Whether the field needs to be verified）
 字段校验有问题时的提示语，依赖于 nullText 和 regexText，可以不设置此字段（The prompt language when there is a problem with the field verification, which depends on nullText and regexText, and this field may not be set）
 ##### maxLength
 input 或 textarea 类型的字段，设置可输入字段的最大长度（Input or textarea type field, set the maximum length of the input field）
+##### value
+input 或 textarea 类型的字段，通常用于支持设置默认值和已提交的表单再编辑（Input or textarea type field, Usually used to support setting default values and re-editing of submitted forms)
 ##### Done
     - Validation
-    - Adapt to mobile phone 
+    - Adapt to mobile phone
+    - Support editing for input
 ##### Todo
     - Custom style
     - Loading when submitting
