@@ -122,6 +122,11 @@ form span {
   position: relative!important;
 }
 
+.reactForm form span.require_text {
+  font-family: cursive;
+  font-size: 19px;
+}
+
 .reactForm.phone .submit {
   text-align: center;
 }
