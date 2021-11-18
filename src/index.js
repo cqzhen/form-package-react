@@ -7,6 +7,7 @@ class Form extends React.Component {
 		super(props);
 		this.state = {
       fields: props.data || [],
+      config: props.config || {},
       type: 'web'
     };
 		this.handleChange = this.handleChange.bind(this);
@@ -16,7 +17,7 @@ class Form extends React.Component {
 	render() {
 		return (
 			<div className={`${this.state.type} reactForm`}>
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.handleSubmit} encType={this.state.config.enctype || 'multipart/form-data'} method={this.state.config.method || 'post'}>
 					{
 						this.state.fields.map(item => {
 							if(item.type === 'input') {
@@ -40,7 +41,9 @@ class Form extends React.Component {
 							return null;
 						})
 					}
-					<div className="submit"><label className="label"></label><button type="submit">提交</button></div>
+          {  !this.state.config.noSubmit &&
+					   <div className="submit"><label className="label"></label><button type="submit">提交</button></div>
+          }
 				</form>
 			</div>
 		)
@@ -112,6 +115,7 @@ class Form extends React.Component {
       return;
     }
 
+    console.log('event:', event);
     console.log('data:', this.state);
 
     if (typeof this.props.submit === "function") {

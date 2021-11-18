@@ -20,7 +20,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Form data={data || []} submit={this.submit} />
+				<Form data={data || []} config={config || {}} submit={this.submit} />
 			</div>
 		)
 	}
@@ -67,11 +67,21 @@ const data = [
   {id: 'quitDate', label: '出生日期', type: 'date', require: true, remindText: '', nullText: '内容不为空' },
   {id: 'company', label: '公司', type: 'input', require: false, remindText: '', nullText: '', maxLength: 10 },
   {id: 'sex', label: '性别', type: 'radio', options: [{label: '男', value: 1}, {label: '女', value: 2}], require: true, remindText: '', nullText: '内容不为空', },
-  {id: 'img1', label: '个人相片', type: 'inputFile', require: true, remindText: '', nullText: '内容不为空', },
+  {id: 'img1', label: '个人相片', type: 'inputFile', accept: '.xlsx', uploadApi: 'http://localhost:upload/', serverFilePath: 'http://localhost:1515', require: true, remindText: '', nullText: '内容不为空', },
   {id: 'provice', label: '省份', type: 'select', options: [{label: '北京', value: 1}, {label: '上海', value: 2}, {label: '广州', value: 3},{label: '深圳', value: 4},{label: '武汉', value: 5},{label: '郑州', value: 6} ], require: true, remindText: '', nullText: '内容不为空', },
   {id: 'introduce', label: '简介', type: 'textarea', require: true, remindText: '', nullText: '内容不为空', },
-  {id: 'img2', label: '个人相片', type: 'inputFile', require: true, remindText: '', nullText: '内容不为空', },
+  {id: 'img2', label: '个人相片', type: 'inputFile', accept: '.png,.jpg,.xlsx', require: true, remindText: '', nullText: '内容不为空', uploadApi: '', serverFilePath:'', },
 ];
+
+export default data;
+```
+### config for form the config
+```data
+const config = {
+  enctype: '',
+  method: '',
+  noSubmit: '',
+};
 
 export default data;
 ```
@@ -106,6 +116,10 @@ boolean 字段是否需要校验 （Whether the field needs to be verified）
 input 或 textarea 类型的字段，设置可输入字段的最大长度（Input or textarea type field, set the maximum length of the input field）
 ##### value
 input 或 textarea 类型的字段，通常用于支持设置默认值和已提交的表单再编辑（Input or textarea type field, Usually used to support setting default values and re-editing of submitted forms)
+##### uploadApi
+inputFile 类型的字段，用于上传文件，及上传文件的接口（A field of inputFile type, used to upload files, and upload file interface）
+##### serverFilePath
+inputFile 类型的字段，用于上传文件后查看服务器归档的文件夹列表（A field of inputFile type, used to view the list of folders archived by the server after uploading a file）
 ##### Done
     - Validation
     - Adapt to mobile phone

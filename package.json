@@ -1,6 +1,6 @@
 {
   "name": "form-package-react",
-  "version": "0.0.78",
+  "version": "0.0.79",
   "description": "form package for react",
   "main": "lib/index.js",
   "scripts": {
@@ -35,5 +35,7 @@
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
 }
