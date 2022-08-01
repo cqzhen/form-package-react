@@ -100,6 +100,8 @@ export default data;
 每一个属性的 label 值 (Label value for each attribute。)
 ##### type
 每一个元素的类型：input, inputFile, radio, select, textarea（The type of each element: input, inputFile, radio, select, textarea, date） 
+##### attributeStr
+每一个元素的属性：目前只支持 input 类型（The attributeStr of each element: currently only supports input） 
 ##### options
 radio 类型和 select 类型的专有对象数组属性，包含 label 和 value 两个属性。(Radio type and select type proprietary object array attributes, including label and value attributes。)
 ##### require

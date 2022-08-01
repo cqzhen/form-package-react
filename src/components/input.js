@@ -7,17 +7,27 @@ class Input extends React.Component {
     this.state = { text: '', count: 0 };
     this.handleChange = this.handleChange.bind(this);
     this.hasValue = this.hasValue.bind(this);
+    this.inputEle = React.createRef();
   }
 
   render() {
     return (
       <div>
         <label className="label">{this.props.data.label}:</label>
-        <input value={this.state.text || ''} onChange={this.handleChange} maxLength={this.props.data.maxLength} />
+        <input value={this.state.text || ''} ref={this.inputEle} onChange={this.handleChange} maxLength={this.props.data.maxLength} />
         <Star data={this.props.data}></Star>
         <RequireText data={this.props.data}></RequireText>
       </div>
     )
+  }
+
+  componentDidMount() {
+    if (!this.props.data.attributeStr) return;
+    this.props.data.attributeStr.split(';').forEach((item, index) => {
+      if (!item) return;
+      let attr = item.split('=');
+      this.inputEle.current.setAttribute(attr[0], attr[1]);
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
