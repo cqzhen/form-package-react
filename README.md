@@ -119,9 +119,15 @@ input 或 textarea 类型的字段，设置可输入字段的最大长度（Inpu
 ##### value
 input 或 textarea 类型的字段，通常用于支持设置默认值和已提交的表单再编辑（Input or textarea type field, Usually used to support setting default values and re-editing of submitted forms)
 ##### uploadApi
-inputFile 类型的字段，用于上传文件，及上传文件的接口（A field of inputFile type, used to upload files, and upload file interface）
+string inputFile 类型的字段，用于上传文件，及上传文件的接口（A field of inputFile type, used to upload files, and upload file interface）
+##### deleteApi
+string inputFile 类型的字段，用于删除文件，及删除当前文件的接口（A field of inputFile type, Interface for deleting files and deleting the current file）
+##### fileNumber
+number inputFile 类型的字段，默认值为 1 。用于上传文件最大数量（A field of inputFile type,The default value is 1. The maximum number of uploaded files）
+##### isShowFilePath
+boolean inputFile 类型的字段，用于上传文件后查看服务器上传文件（A field of inputFile type, Used to display files on the server after the file is uploaded）
 ##### serverFilePath
-inputFile 类型的字段，用于上传文件后查看服务器归档的文件夹列表（A field of inputFile type, used to view the list of folders archived by the server after uploading a file）
+string inputFile 类型的字段，用于上传文件后查看服务器归档的文件夹列表（A field of inputFile type, used to view the list of folders archived by the server after uploading a file）
 ##### Done
     - Validation
     - Adapt to mobile phone
