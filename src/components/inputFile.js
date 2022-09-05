@@ -16,9 +16,9 @@ class Input extends React.Component {
   render() {
     return (
       <div>
-        <label className="label">{this.data.label}:</label>
+        <label className="label">{this.data.label}</label>
         {this.data.fileNumber == this.state.files.length &&
-          <button className="disabled" type="button">已达上限</button>
+          <button className="disabled" type="button">上传完毕</button>
         }
         {this.data.fileNumber != this.state.files.length &&
           <button onClick={() => { this.fileInput.current.click() }} type="button">上传</button>

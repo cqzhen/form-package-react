@@ -20,7 +20,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<Form data={data || []} config={config || {}} submit={this.submit} />
+				<Form data={data || []} config={config || {}} type={"web web_mini" || "web web_middle"} submit={this.submit} />
 			</div>
 		)
 	}
@@ -84,6 +84,11 @@ const config = {
 };
 
 export default data;
+```
+### config for form the css 
+```type
+// 默认样式是 web，针对表单样式，基于 web 做了 mini 和 middle 适配
+<Form data={data || []} config={config || {}} type={"web web_mini" || "web web_middle"} submit={this.submit} />
 ```
 
 ### Version changes 

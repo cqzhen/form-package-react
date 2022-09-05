@@ -12,7 +12,7 @@ class InputDate extends React.Component {
   render() {
     return (
       <div>
-        <label className="label">{this.props.data.label}:</label>
+        <label className="label">{this.props.data.label}</label>
         <input value={this.state.text || ''} onChange={this.handleChange} type="date" />
         <Star data={this.props.data}></Star>
         <RequireText data={this.props.data}></RequireText>

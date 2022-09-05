@@ -11,7 +11,7 @@ class Radio extends React.Component {
   render() {
     return (
       <div>
-        <label className="label">{this.props.data.label}:</label>
+        <label className="label">{this.props.data.label}</label>
         <select type="radio" className="radio" name={this.props.data.id} onChange={this.handleChange} >
         {
           this.props.data.options.map((item, index) => {

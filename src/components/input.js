@@ -13,7 +13,7 @@ class Input extends React.Component {
   render() {
     return (
       <div>
-        <label className="label">{this.props.data.label}:</label>
+        <label className="label">{this.props.data.label}</label>
         <input value={this.state.text || ''} ref={this.inputEle} onChange={this.handleChange} maxLength={this.props.data.maxLength} />
         <Star data={this.props.data}></Star>
         <RequireText data={this.props.data}></RequireText>

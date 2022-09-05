@@ -12,7 +12,7 @@ class TextArea extends React.Component {
   render() {
     return (
       <div>
-        <label className="label">{this.props.data.label}:</label>
+        <label className="label">{this.props.data.label}</label>
         <textarea value={this.state.text || ''} onChange={this.handleChange} maxLength={this.props.data.maxLength} />
         <Star data={this.props.data}></Star>
         <RequireText data={this.props.data}></RequireText>

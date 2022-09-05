@@ -8,7 +8,7 @@ class Form extends React.Component {
 		this.state = {
       fields: props.data || [],
       config: props.config || {},
-      type: 'web'
+      type: props.type || 'web',
     };
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);

@@ -31,6 +31,7 @@ form > div {
 	padding-right: 10px;
 	vertical-align: top;
   font-size: 13px;
+  line-height: 25px;
 }
 
 .reactForm.phone .label {
@@ -82,6 +83,9 @@ form input,form select,form textarea,form button{
 .reactForm.web form textarea {
 	width: 150px;
   height: 60px;
+  padding: 10px;
+  text-align: justify;
+  font-family: auto;
 }
 
 form .img_container {
@@ -97,7 +101,7 @@ form .img_context {
 }
 
 form .img_context:nth-child(1) {
-  margin: 10px 0 0 105px;
+  margin: 10px 0 0 110px;
 }
 
 form .img_close {
@@ -137,7 +141,7 @@ form img:nth-child(1) {
 }
 
 .reactForm.phone form .img_context {
-  margin: 10px 0 0 10px;
+  margin: 10px 10px 0 0;
   position: relative;
 	width: 100px;
   height: 60px;
@@ -199,8 +203,12 @@ form span {
 }
 
 .reactForm form span.require_text {
+  /*
   font-family: cursive;
   font-size: 19px;
+   */
+  font-size: 12px;
+  line-height: 25px;
 }
 
 .reactForm.phone .submit {
@@ -214,3 +222,66 @@ form span {
 .reactForm.phone .server_info {
   padding-left: 10px;
 }
+
+/*
+ * web_mini css start
+ */
+
+.reactForm.web_mini .label,.reactForm.web_mini .require_text {
+  line-height: 25px;
+}
+
+/*
+ * web_mini css end
+ */
+
+
+
+/*
+ * web_middle css start
+ */
+
+
+.reactForm.web_middle .label,.reactForm.web_middle .require_text,.reactForm.web_middle form button {
+  line-height: 35px;
+  height: 35px;
+}
+
+.reactForm.web_middle form button {
+  padding: 0 35px;
+}
+
+.reactForm.web_middle select,.reactForm.web_middle input {
+  height: 35px;
+  width: 300px;
+}
+
+.reactForm.web_middle select {
+  width: 320px;
+}
+
+.reactForm.web.web_middle form input {
+  height: 35px!important;
+  width: 300px!important;
+}
+
+.reactForm.web.web_middle form textarea {
+    width: 300px;
+    height: 100px;
+}
+
+
+/*
+ * web_middle css end
+ */
+
+
+
+/*
+ * web_max css start
+ */
+
+
+/*
+ * web_max css end
+ */
