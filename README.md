@@ -81,6 +81,7 @@ const config = {
   enctype: '',
   method: '',
   noSubmit: '',
+  submitText: '',
 };
 
 export default data;

@@ -42,7 +42,7 @@ class Form extends React.Component {
 						})
 					}
           {  !this.state.config.noSubmit &&
-					   <div className="submit"><label className="label"></label><button type="submit">提交</button></div>
+					   <div className="submit"><label className="label"></label><button type="submit">{ this.state.config.submitText || '提交'}</button></div>
           }
 				</form>
 			</div>

@@ -193,6 +193,7 @@ form span {
 
 .reactForm form span.require_star {
   position: absolute;
+  line-height: 25px;
 }
 
 .reactForm.phone form span.require_text {
@@ -270,6 +271,9 @@ form span {
     height: 100px;
 }
 
+.reactForm.web_middle form span.require_star {
+  line-height: 35px;
+}
 
 /*
  * web_middle css end
