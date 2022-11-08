@@ -261,6 +261,27 @@ form span {
   width: 320px;
 }
 
+.reactForm.web_middle .cascader {
+  display: inline-block;
+  width: 320px;
+}
+
+.reactForm.web_middle .cascader .container {
+  display: flex;
+}
+
+.reactForm.web_middle select.cascader_select:disabled {
+    background: #ebeaed;
+}
+
+.reactForm.web_middle select.cascader_select {
+  flex: 1;
+}
+
+.reactForm.web_middle .cascader select.cascader_select:not(:first-child) {
+  margin-left: 10px;
+}
+
 .reactForm.web.web_middle form input {
   height: 35px!important;
   width: 300px!important;

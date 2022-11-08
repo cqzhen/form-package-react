@@ -1,6 +1,6 @@
 {
   "name": "form-package-react",
-  "version": "0.0.80",
+  "version": "0.0.81",
   "description": "form package for react",
   "main": "lib/index.js",
   "scripts": {

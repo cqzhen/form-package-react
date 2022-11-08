@@ -5,12 +5,13 @@ import Axios from './../utils/axios';
 class Input extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {file: '', imgUrl: [], files: []};
+    this.state = {file: '', imgUrl: [], files: [], count: 0};
     this.handleChange = this.handleChange.bind(this);
     this.closeImage = this.closeImage.bind(this);
     this.fileInput = React.createRef();
     this.data = props.data;
     if (!this.data.fileNumber) this.data.fileNumber = 1;
+    this.hasValue = this.hasValue.bind(this);
   }
 
   render() {
@@ -96,11 +97,31 @@ class Input extends React.Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (!this.state.count) {
+    // if (!this.state.imgUrl.length) {
+      this.setState({count: 1});
+      this.hasValue(prevProps.data.value);
+    }
+  }
+
   handleChange(e) {
     this.setState({file: this.fileInput.current.files});
     if (this.data.uploadApi) {
       this.uploadFile();
     }
+  }
+
+  hasValue(value) {
+    if (this.state.imgUrl.length && value === this.state.imgUrl[0].imgUrl) return;
+    let time = +new Date();
+    this.setState({imgUrl: [{imgUrl: value, destination: value, href: value, id: time}]});
+    this.setState(state => ({
+      files: state.imgUrl
+    }));
+    setTimeout(() => {
+      this.props.handleChange({id: this.props.data.id, value: this.state.imgUrl});
+    });
   }
 
   async createUrl(files, id) {

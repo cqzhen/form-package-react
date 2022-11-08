@@ -22,6 +22,7 @@ class TextArea extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (!this.state.count) {
+    // if (prevProps.data.value != this.state.text) {
       this.setState({count: 1});
       this.hasValue(prevProps.data.value);
     }
