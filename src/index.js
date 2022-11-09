@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Radio, Select, Textarea, InputFile, InputDate, Cascader } from './components/index';
+import { Input, Radio, Select, Textarea, InputFile, InputDate, Cascader, Checkbox } from './components/index';
 import './index.css';
 import Element from './element.js';
 class Form extends React.Component {
@@ -40,6 +40,9 @@ class Form extends React.Component {
 							}
 							if(item.type === 'cascader') {
 								return <Cascader key={item.id} handleChange={this.handleChange} data={item} />
+							}
+							if(item.type === 'checkbox') {
+								return <Checkbox key={item.id} handleChange={this.handleChange} data={item} />
 							}
 							return null;
 						})
@@ -109,6 +112,12 @@ class Form extends React.Component {
     let errorObjs = [];
     let fields = this.state.fields;
 
+    for (let i = 0; i < fields.length; i++) {
+      this.setState({
+        [fields[i].id]: fields[i].value
+      })
+    }
+
     errorObjs = this.getErrorObjs();
 
     if (errorObjs.length) {
@@ -122,7 +131,9 @@ class Form extends React.Component {
     console.log('data:', this.state);
 
     if (typeof this.props.submit === "function") {
-      this.props.submit(this.state);
+      setTimeout(() => {
+        this.props.submit(this.state);
+      });
     } else {
       console.warn('warn', "are you sure don't bind the function for the submit?")
     }

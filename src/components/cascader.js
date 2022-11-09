@@ -25,7 +25,7 @@ class Cascader extends React.Component {
         <div className="cascader">
           <div className="container">
             {this.props.data.elements.map((item, index) => {
-              return <select ref={this[`elements_${index}`]} disabled={item.disabled} type="radio" className="radio cascader_select" name={item.name} onChange={this.handleChange.bind(this, {index, item})} >
+              return <select ref={this[`elements_${index}`]} disabled={item.disabled} className="cascader_select" name={item.name} onChange={this.handleChange.bind(this, {index, item})} >
                 <option key={-1} value={''}></option>
               {
                 item.options.map((option, key) => {
@@ -49,20 +49,21 @@ class Cascader extends React.Component {
         let data = res.data.data;
         this.props.data.elements[0].options = data;
         this.setState({'parent': data});
+        if (this.props.data.value) this.hasValue(this.props.data.value);
       });
     console.log('elements_did:', this.props.data.elements);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // if (!this.state.count) {
-    if (this.state.count < 2 && prevProps.data.value != this.state.radioValue) {
-      console.log('elements_update_count:', this.state.count);
-      console.log('elements_update_value:', prevProps.data.value);
-      this.setState(state => ({count: state.count + 1}));
-      this.setState({radioValue: prevProps.data.value});
-      this.hasValue(prevProps.data.value);
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   // if (!this.state.count) {
+  //   if (this.state.count < 2 && prevProps.data.value != this.state.radioValue) {
+  //     console.log('elements_update_count:', this.state.count);
+  //     console.log('elements_update_value:', prevProps.data.value);
+  //     this.setState(state => ({count: state.count + 1}));
+  //     this.setState({radioValue: prevProps.data.value});
+  //     this.hasValue(prevProps.data.value);
+  //   }
+  // }
 
   handleChange(obj, e) {
     let index = obj.index;
@@ -129,9 +130,9 @@ class Cascader extends React.Component {
       }));
     }
     // this.setState({radioValue: value});
-    setTimeout(() => {
-      this.props.handleChange({id: this.props.data.id, value});
-    });
+    // setTimeout(() => {
+    //   this.props.handleChange({id: this.props.data.id, value});
+    // });
   }
 }
 

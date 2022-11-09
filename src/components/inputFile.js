@@ -97,19 +97,23 @@ class Input extends React.Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (!this.state.count) {
-    // if (!this.state.imgUrl.length) {
-      this.setState({count: 1});
-      this.hasValue(prevProps.data.value);
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (!this.state.count) {
+  //   // if (!this.state.imgUrl.length) {
+  //     this.setState({count: 1});
+  //     this.hasValue(prevProps.data.value);
+  //   }
+  // }
 
   handleChange(e) {
     this.setState({file: this.fileInput.current.files});
     if (this.data.uploadApi) {
       this.uploadFile();
     }
+  }
+
+  componentDidMount() {
+    if (this.props.data.value) this.hasValue(this.props.data.value);
   }
 
   hasValue(value) {

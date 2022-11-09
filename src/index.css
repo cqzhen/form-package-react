@@ -88,6 +88,49 @@ form input,form select,form textarea,form button{
   font-family: auto;
 }
 
+.reactForm.web.web_middle form input[data-type="checkbox"] {
+  color: #409EFF;
+}
+
+.reactForm.web.web_middle form span.close {
+    position: absolute;
+    z-index: 1100;
+    background: #9f9b9b;
+    width: 25px;
+    height: 25px;
+    right: 0;
+    text-align: center;
+    line-height: 23px;
+    top: 0;
+    border: solid 1px #c7c6c6;
+    border-radius: 100px;
+    display: block;
+    color: white;
+}
+
+.reactForm.web form .checkbox_container {
+  position: absolute;
+  z-index: 1000;
+  background: white;
+  width: 280px;
+  margin-left: 110px;
+  padding: 20px;
+  border: solid 1px #c7c6c6;
+  border-radius: 5px;
+}
+
+.reactForm.web form .checkbox_container p {
+  display: inline-block;
+  margin: 2px 5px;
+  font-size: 10px;
+  padding: 1px 2px;
+}
+
+.reactForm.web form .checkbox_container p.active {
+  background: #409EFF;
+  border-radius: 2px;
+}
+
 form .img_container {
   display: flex;
   flex-direction: row;
