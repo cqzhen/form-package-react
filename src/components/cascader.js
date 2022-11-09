@@ -43,7 +43,6 @@ class Cascader extends React.Component {
   }
   
   componentDidMount() {
-  // componentWillMount() {
     Axios.get(this.props.data.serviceApi)
       .then((res) => {
         let data = res.data.data;
@@ -53,17 +52,6 @@ class Cascader extends React.Component {
       });
     console.log('elements_did:', this.props.data.elements);
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   // if (!this.state.count) {
-  //   if (this.state.count < 2 && prevProps.data.value != this.state.radioValue) {
-  //     console.log('elements_update_count:', this.state.count);
-  //     console.log('elements_update_value:', prevProps.data.value);
-  //     this.setState(state => ({count: state.count + 1}));
-  //     this.setState({radioValue: prevProps.data.value});
-  //     this.hasValue(prevProps.data.value);
-  //   }
-  // }
 
   handleChange(obj, e) {
     let index = obj.index;
@@ -129,10 +117,6 @@ class Cascader extends React.Component {
         'test': !state.test
       }));
     }
-    // this.setState({radioValue: value});
-    // setTimeout(() => {
-    //   this.props.handleChange({id: this.props.data.id, value});
-    // });
   }
 }
 

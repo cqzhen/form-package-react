@@ -33,7 +33,6 @@ class Checkbox extends React.Component {
   }
 
   componentDidMount() {
-  // componentWillMount() {
     document.addEventListener('click', (e) => {
       e.stopPropagation();
       if (!(e.target.getAttribute('element-type') === 'checkbox_component')) {
@@ -50,7 +49,6 @@ class Checkbox extends React.Component {
         this.setState({'checkboxList': data});
         if (this.props.data.value) this.hasValue(this.props.data.value);
       });
-    
     
     if (!this.props.data.attributeStr) return;
     this.props.data.attributeStr.split(';').forEach((item, index) => {
@@ -88,17 +86,7 @@ class Checkbox extends React.Component {
     });
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   console.log('categoryIdStr_value_1:', prevProps.data);
-  //   if (this.state.count < 2 && prevProps.data.value != this.state.checkboxValue) {
-  //     console.log('categoryIdStr_value_2:', prevProps.data.value);
-  //     this.setState(state => ({count: state.count + 1}));
-  //     this.hasValue(prevProps.data.value);
-  //   }
-  // }
-
   hasValue(value) {
-    // if (value === this.state.checkboxValue) return;
     if (value) {
       let list = value.split(',');
       let checkboxList = this.state.checkboxList;
@@ -112,10 +100,6 @@ class Checkbox extends React.Component {
       this.setState({checkedList: list});
       this.setState({checkboxValue: value});
     }
-    // this.setState({text: value});
-    // setTimeout(() => {
-    //   this.props.handleChange({id: this.props.data.id, value});
-    // });
   }
 }
 

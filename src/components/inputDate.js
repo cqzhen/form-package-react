@@ -23,27 +23,14 @@ class InputDate extends React.Component {
   componentDidMount() {
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (!this.state.count) {
-  //     this.setState({count: 1});
-  //     this.hasValue(prevProps.data.value);
-  //   }
-  // }
-
   handleChange(e) {
     let value = e.target.value;
     if (value !== this.state.text) return;
-    // this.hasValue(e.target.value);
     this.setState({text: value});
     setTimeout(() => {
       this.props.handleChange({id: this.props.data.id, value});
     });
   }
-
-  // hasValue(value) {
-  //   // if (value === this.state.text) return;
-  //   this.setState({text: value});
-  // }
 
 }
 
