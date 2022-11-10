@@ -38,7 +38,7 @@ export default App;
 
 ### Data for form type
 
-Type: input, inputFile, radio, select, textarea, date
+Type: input, inputFile, radio, select, textarea, date, checkbox, cascader
 
 ### Data for form the source config
 ```data
@@ -71,6 +71,48 @@ const data = [
   {id: 'provice', label: '省份', type: 'select', options: [{label: '北京', value: 1}, {label: '上海', value: 2}, {label: '广州', value: 3},{label: '深圳', value: 4},{label: '武汉', value: 5},{label: '郑州', value: 6} ], require: true, remindText: '', nullText: '内容不为空', },
   {id: 'introduce', label: '简介', type: 'textarea', require: true, remindText: '', nullText: '内容不为空', },
   {id: 'img2', label: '个人相片', type: 'inputFile', accept: '.png,.jpg,.xlsx', require: true, remindText: '', nullText: '内容不为空', uploadApi: '', serverFilePath:'', },
+  {
+    id: 'category',
+    label: '个人爱好',
+    type: 'checkbox',
+    require: true,
+    remindText: '',
+    nullText: '请选个人爱好',
+    regex: '',
+    regexText: '',
+    serviceApi: 'http://localhost:1515/api/category',
+    // 多选的上限个数 select elements for max length
+    max: 3,
+    attributeStr: 'data-type=checkbox',
+  },
+  {
+    id: 'area',
+    label: '地区',
+    type: 'cascader',
+    require: true,
+    serviceApi: 'http://localhost:1515/city/all',
+    childName: 'cityItems',
+    // every element for cascader config
+    elements: [
+      {
+        name: 'province',
+        disabled: false,
+        options: [{name:'', id: ''}],
+      },
+      {
+        name: 'city',
+        disabled: false,
+        options: [{name:'', id: ''}],
+      },
+      {
+        name: 'country',
+        disabled: false,
+        options: [{name:'', id: ''}],
+      }
+    ],
+    remindText: '',
+    nullText: '请选择地区',
+  },
 ];
 
 export default data;
@@ -121,9 +163,40 @@ boolean 字段是否需要校验 （Whether the field needs to be verified）
 ##### remindText
 字段校验有问题时的提示语，依赖于 nullText 和 regexText，可以不设置此字段（The prompt language when there is a problem with the field verification, which depends on nullText and regexText, and this field may not be set）
 ##### maxLength
-input 或 textarea 类型的字段，设置可输入字段的最大长度（Input or textarea type field, set the maximum length of the input field）
+int input 或 textarea 类型的字段，设置可输入字段的最大长度（Input or textarea type field, set the maximum length of the input field）
 ##### value
 input 或 textarea 类型的字段，通常用于支持设置默认值和已提交的表单再编辑（Input or textarea type field, Usually used to support setting default values and re-editing of submitted forms)
+##### serviceApi 
+string cascader/checkbox 类型的字段，用于从服务器获取 option 数据的接口（A field of cascader/checkbox type, used to catch data for option of interface）
+##### childName 
+string cascader 类型的字段，由于级联数据是 Tree Data, 所以为了获取子类，需要配置子类的 key（A field of cascader type, Since the cascading data is Tree Data, in order to get the subclass, you need to configure the key of the subclass）
+##### elements 
+Array cascader 类型的字段，用于配置级联各个子组件，子组件目前只支持而且默认为 select（A field of cascader type, Used to configure cascading individual subcomponents, which are currently only supported and default to select）
+###### elements disabled 
+bool 决定当前 select 是否被禁用 (Determines whether select is currently disabled)
+###### elements name
+string 当前 select 组件的 key (The key of the current select component)
+###### elements options 
+Array 当前 select 的 option 数据 (The option data for the current select)
+
+```cascader config for elements
+// This element currently only supports cascade
+elements: [
+  {
+    name: 'province',
+    disabled: false,
+    // example: childName is children
+    options: [{'name': '江苏', id: '', children:[]}]
+  },
+  {
+    name: 'city',
+    disabled: false,
+    options: [{'name': '南京', id: '', children:[]}]
+  },
+   ...
+]
+```
+
 ##### uploadApi
 string inputFile 类型的字段，用于上传文件，及上传文件的接口（A field of inputFile type, used to upload files, and upload file interface）
 ##### deleteApi
