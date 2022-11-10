@@ -309,16 +309,22 @@ form span {
   width: 320px;
 }
 
-.reactForm.web_middle .cascader .container {
+.reactForm.web_mini .cascader {
+  display: inline-block;
+  width: 300px;
+}
+
+.reactForm.web .cascader .container {
   display: flex;
 }
 
-.reactForm.web_middle select.cascader_select:disabled {
+.reactForm.web select.cascader_select:disabled {
     background: #ebeaed;
 }
 
-.reactForm.web_middle select.cascader_select {
+.reactForm.web select.cascader_select {
   flex: 1;
+  max-width: 100px;
 }
 
 .reactForm.web_middle .cascader select.cascader_select:not(:first-child) {

@@ -67,16 +67,13 @@ class Cascader extends React.Component {
     }
     console.log('textValue:', textValue);
     this.setState({'radioValue': textValue});
+    setTimeout(() => {
+      this.props.handleChange({id: this.props.data.id, value: textValue});
+    });
     if (index + 1 >= itemLength) {
-      setTimeout(() => {
-        this.props.handleChange({id: this.props.data.id, value: textValue});
-      });
       return;
     };
     if (!children.length) {
-      setTimeout(() => {
-        this.props.handleChange({id: this.props.data.id, value: textValue});
-      });
     };
     for (let i = index + 1; i < itemLength; i++) {
       this.props.data.elements[i].options = [];

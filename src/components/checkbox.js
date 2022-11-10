@@ -98,6 +98,7 @@ class Checkbox extends React.Component {
       }
       this.setState({text: textList.join(',')});
       this.setState({checkedList: list});
+      this.setState({checkedTextList: textList});
       this.setState({checkboxValue: value});
     }
   }
