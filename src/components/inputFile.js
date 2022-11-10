@@ -18,10 +18,10 @@ class Input extends React.Component {
     return (
       <div>
         <label className="label">{this.data.label}</label>
-        {this.data.fileNumber == this.state.files.length &&
+        {this.data.fileNumber <= this.state.files.length &&
           <button className="disabled" type="button">上传完毕</button>
         }
-        {this.data.fileNumber != this.state.files.length &&
+        {this.data.fileNumber > this.state.files.length &&
           <button onClick={() => { this.fileInput.current.click() }} type="button">上传</button>
         }
         <Star data={this.data}></Star>
