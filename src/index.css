@@ -92,22 +92,6 @@ form input,form select,form textarea,form button{
   color: #409EFF;
 }
 
-.reactForm.web.web_middle form span.close {
-    position: absolute;
-    z-index: 1100;
-    background: #9f9b9b;
-    width: 25px;
-    height: 25px;
-    right: 0;
-    text-align: center;
-    line-height: 23px;
-    top: 0;
-    border: solid 1px #c7c6c6;
-    border-radius: 100px;
-    display: block;
-    color: white;
-}
-
 .reactForm.web form .checkbox_container {
   position: absolute;
   z-index: 1000;
