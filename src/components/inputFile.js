@@ -31,7 +31,7 @@ class Input extends React.Component {
           {this.state.imgUrl.length > 0 &&
             this.state.imgUrl.map((item, index) => (
               <div className="img_context">
-                <img src={item.imgUrl} alt="图片" />
+                <img src={item.href} alt="图片" />
                 <span className="img_close" id={item.id} onClick={this.closeImage}>x</span>
               </div>
             ))
@@ -70,11 +70,10 @@ class Input extends React.Component {
       let resFiles = res.data.data.files || [];
       let files = this.state.files;
       files.push(resFiles[0]);
-      console.log('files:', res.data.data.files);
       this.setState({ files });
       setTimeout(() => {
         this.createUrl(this.state.file, resFiles[0].id);
-        this.props.handleChange({id: this.data.id, value: this.state.files});
+        this.props.handleChange({id: this.data.id, value: JSON.stringify(this.state.files)});
         this.fileInput.current.value = '';
       });
     });
@@ -87,7 +86,7 @@ class Input extends React.Component {
     files = files.filter(x => x.id != e.target.id);
     this.setState(state => ({imgUrl: imgs, files}));
     // 如何处理 !!!
-    this.props.handleChange({id: this.data.id, value: files.length ? files : ''});
+    this.props.handleChange({id: this.data.id, value: JSON.stringify(files.length ? files : '')});
     if (!this.data.deleteApi) return;
     Axios.post(this.data.deleteApi, e.target.id)
     .then(res => {
@@ -109,15 +108,12 @@ class Input extends React.Component {
   }
 
   hasValue(value) {
-    if (this.state.imgUrl.length && value === this.state.imgUrl[0].imgUrl) return;
-    let time = +new Date();
-    this.setState({imgUrl: [{imgUrl: value, destination: value, href: value, id: time}]});
-    this.setState(state => ({
-      files: state.imgUrl
-    }));
-    setTimeout(() => {
-      this.props.handleChange({id: this.props.data.id, value: this.state.imgUrl});
-    });
+    try {
+      this.setState(state => ({
+        files: JSON.parse(value),
+        imgUrl: JSON.parse(value),
+      }));
+    } catch(e) {}
   }
 
   async createUrl(files, id) {
@@ -137,9 +133,8 @@ class Input extends React.Component {
       })
     );
     let imgs = this.state.imgUrl;
-    imgs.push({imgUrl: result[0], id});
+    imgs.push({href: result[0], id});
     await this.setState({ imgUrl: imgs });
-    console.log(result);
   }
 }
 
