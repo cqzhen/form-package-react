@@ -138,7 +138,8 @@ export default data;
 
 | Version | Changes |
 |   :-:   |  :-  |
-| 0.0.7 - 0.0.74 |1.表单校验（Validation）<br>2.适配手机样式（Adapt to mobile phone）| 
+| 0.0.80 - 0.0.82 |1.添加多选框和级联组件（add components for checkbox and cascader) <br> 2. 支持编辑（support edit) | 
+| 0.0.70 - 0.0.74 |1.表单校验（Validation）<br>2.适配手机样式（Adapt to mobile phone）| 
       
       
 

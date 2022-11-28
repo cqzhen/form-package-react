@@ -66,6 +66,10 @@ form input,form select,form textarea,form button{
   resize: none;
 }
 
+form .cascader {
+  display: inline-block;
+}
+
 .reactForm.web form input:not([type=radio]) {
   width: 150px;
 }
@@ -88,31 +92,34 @@ form input,form select,form textarea,form button{
   font-family: auto;
 }
 
-.reactForm.web.web_middle form input[data-type="checkbox"] {
+.reactForm form input[data-type="checkbox"] {
   color: #409EFF;
 }
 
-.reactForm.web form .checkbox_container {
+.reactForm form .checkbox_container {
   position: absolute;
   z-index: 1000;
   background: white;
-  width: 280px;
-  margin-left: 110px;
+  width: 320px;
   padding: 20px;
   border: solid 1px #c7c6c6;
   border-radius: 5px;
 }
 
-.reactForm.web form .checkbox_container p {
+.reactForm form .checkbox_container p {
   display: inline-block;
   margin: 2px 5px;
   font-size: 10px;
   padding: 1px 2px;
 }
 
-.reactForm.web form .checkbox_container p.active {
+.reactForm form .checkbox_container p.active {
   background: #409EFF;
   border-radius: 2px;
+}
+
+.reactForm.web form .checkbox_container {
+  margin-left: 100px;
 }
 
 form .img_container {
@@ -128,7 +135,7 @@ form .img_context {
 }
 
 form .img_context:nth-child(1) {
-  margin: 10px 0 0 110px;
+  margin: 10px 0 0 100px;
 }
 
 form .img_close {
@@ -281,7 +288,7 @@ form span {
 
 .reactForm.web_middle select,.reactForm.web_middle input {
   height: 35px;
-  width: 300px;
+  width: 320px;
 }
 
 .reactForm.web_middle select {
@@ -295,7 +302,7 @@ form span {
 
 .reactForm.web_mini .cascader {
   display: inline-block;
-  width: 300px;
+  width: 320px;
 }
 
 .reactForm.web .cascader .container {
@@ -317,11 +324,11 @@ form span {
 
 .reactForm.web.web_middle form input {
   height: 35px!important;
-  width: 300px!important;
+  width: 320px!important;
 }
 
 .reactForm.web.web_middle form textarea {
-    width: 300px;
+    width: 320px;
     height: 100px;
 }
 
@@ -342,4 +349,16 @@ form span {
 
 /*
  * web_max css end
+ */
+
+/*
+ * phone css start
+ */
+
+.reactForm.phone form .checkbox_container {
+  width: 88%;
+}
+
+/*
+ * phone css end
  */

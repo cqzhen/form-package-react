@@ -108,12 +108,20 @@ class Input extends React.Component {
   }
 
   hasValue(value) {
+    let files = [];
+    let imgUrl = [];
     try {
-      this.setState(state => ({
-        files: JSON.parse(value),
-        imgUrl: JSON.parse(value),
-      }));
-    } catch(e) {}
+      files = JSON.parse(value);
+      imgUrl = JSON.parse(value);
+    } catch(e) {
+      let id = +new Date();
+      files = [{id, href: value}];
+      imgUrl = [{id, href: value}];
+    }
+    this.setState(state => ({
+      files,
+      imgUrl,
+    }));
   }
 
   async createUrl(files, id) {
