@@ -6,7 +6,6 @@ class InputDate extends React.Component {
     super(props);
     this.state = { text: this.props.data.value, count: 0 };
     this.handleChange = this.handleChange.bind(this);
-    this.hasValue = this.hasValue.bind(this);
   }
 
   render() {
